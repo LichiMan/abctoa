@@ -237,7 +237,7 @@ class abcTreeItem(QtWidgets.QTreeWidgetItem):
             cmds.setAttr(abcShader +".shaderFrom", shader["shader"], type="string")
 
     def importinscene(self):
-        cmd = 'AbcImport  -ft "^%s$" "%s"' % (self.path[-1], self.cache.ABCcache.replace(os.path.sep, "/"))
+        cmd = 'AbcImport  -ft "^%s$" "%s"' % (self.getPath(), self.cache.ABCcache.replace(os.path.sep, "/"))
         try:
             mel.eval(cmd)
         except:
